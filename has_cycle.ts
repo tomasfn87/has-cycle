@@ -1,11 +1,11 @@
 type arr = any[]|number[]|string[]
 
-export const has_cycle = (Arr:arr):number => {
+const has_cycle = (Arr:arr):number => {
     if (Arr.length > 1000) {
         console.error("Rule infringed: 0 <= Array length <= 1000");
     }
 
-    if (Arr.length === 1) return 0;
+    if (Arr.length <= 1) return 0;
 
     let visited_items:arr = [];
 
@@ -17,7 +17,11 @@ export const has_cycle = (Arr:arr):number => {
                 }
             }
         }
-        visited_items.push(i)
+
+        visited_items.push(i);
     }
+
     return 0; 
 }
+
+export default has_cycle;
